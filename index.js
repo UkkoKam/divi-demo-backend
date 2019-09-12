@@ -10,53 +10,67 @@ let userData = [
         id: 0,
         name: "Ukko Kamula",
         admin: true,
-        submissions: 
-        {
-            submission_id: 0,
-            name: "KaY - Nettisivut",
-            text: "lorem dolor damen dumen jaaba jaabadiibadaaba",
-            date: "05.12.31",
-            private: false,
-        }
+        submissions: [
+            {
+                submission_id: 0,
+                name: "KaY - Nettisivut",
+                text: "lorem dolor damen dumen jaaba jaabadiibadaaba",
+                date: "05.12.31",
+                private: false,
+            },
+            {
+                submission_id: 1,
+                name: "KaY - Nettisivut",
+                text: "lorem dolor damen dumen jaaba jaabadiibadaaba",
+                date: "05.12.31",
+                private: false,
+            },
+            {
+                submission_id: 2,
+                name: "KaY - Nettisivut",
+                text: "lorem dolor damen dumen jaaba jaabadiibadaaba",
+                date: "05.12.31",
+                private: false,
+            }
+        ]
+        
     },
     {
         id: 1,
         name: "Ukko Kamula",
         admin: true,
-        submissions: 
-        {
-            submission_id: 0,
-            name: "KaY - Nettisivut",
-            text: "lorem dolor damen dumen jaaba jaabadiibadaaba",
-            date: "05.12.31",
-            private: false,
-        }
+        submissions: [
+            {
+                submission_id: 0,
+                name: "KaY - Nettisivut",
+                text: "lorem dolor damen dumen jaaba jaabadiibadaaba",
+                date: "05.12.31",
+                private: false,
+            },
+            {
+                submission_id: 1,
+                name: "KaY - Nettisivut",
+                text: "lorem dolor damen dumen jaaba jaabadiibadaaba",
+                date: "05.12.31",
+                private: false,
+            }
+        ]
+        
+        
     },
     {
         id: 2,
         name: "Ukko Kamula",
         admin: true,
-        submissions: 
-        {
-            submission_id: 0,
-            name: "KaY - Nettisivut",
-            text: "lorem dolor damen dumen jaaba jaabadiibadaaba",
-            date: "05.12.31",
-            private: false,
-        }
+        submissions: []
+        
     },
     {
         id: 3,
         name: "Ukko Kamula",
         admin: true,
-        submissions: 
-        {
-            submission_id: 0,
-            name: "KaY - Nettisivut",
-            text: "lorem dolor damen dumen jaaba jaabadiibadaaba",
-            date: "05.12.31",
-            private: false,
-        }
+        submissions: []
+        
     },
 ]
 
@@ -69,7 +83,7 @@ const generateId = () => {
 
 const generatePostId = (userId) => {
     const maxId = userData[userId].submissions.length > 0
-        ? Math.max(...userData[userId].map(n => n.id))
+        ? Math.max(...userData[userId].submissions.map(n => n.submission_id))
         : 0
 
     return maxId +1
@@ -100,7 +114,7 @@ app.post('/userdata', (req,res) => {
         id: generateId(),
         name: body.name,
         admin: false,
-        submissions: {},
+        submissions: [],
     }
 
     userData = userData.concat(user)
@@ -109,19 +123,19 @@ app.post('/userdata', (req,res) => {
 })
 
 app.post('/userdata/:id/submissions', (req,res) => {
-    const userSubmissions = userData[req.params.id].submissions
-    console.log(userSubmissions)
+    const id = Number(req.params.id)
     const body = req.body
     const submission = {
-        submission_id: generatePostId(req.params.id),
+        submission_id: generatePostId(id),
         name: body.name,
         text: body.text,
         date: new Date(),
         private: true
     }
-    
-    userSubmissions = userSubmissions.put(submission)
-    res.json(userSubmissions)
+   
+    userData[id].submissions = userData[id].submissions.concat(submission)
+
+    res.json(userData[id].submissions)
 
 }) 
 
