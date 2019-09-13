@@ -13,10 +13,22 @@ mongoose.connect(url, {useNewUrlParser: true})
     })
 
 const userSchema = new mongoose.Schema({
-    name: String,
-    admin: Boolean,
-    startingYear: Number,
-    submissions: Array
+    name: {
+        type: String,
+        minlength: 4,
+        required: true
+    },
+    admin: {
+        type: Boolean,
+        required: true
+    },
+    startingYear: {
+        type: Number,
+        required: true
+    },
+    submissions: {
+        type: Array
+    }
     
 })
 
