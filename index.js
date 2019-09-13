@@ -1,25 +1,11 @@
-<<<<<<< HEAD
-const app = require('./app')
-const http = require('http')
-const config = require('./utils/config')
-const userRouter = require('./controllers/users')
-=======
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 
 app.use(bodyParser.json())
->>>>>>> parent of b316c5d... MongoDB enabled
 
 app.use('/userdata', userRouter)
 
-<<<<<<< HEAD
-const server = http.createServer(app)
-
-server.listen(config.PORT, () => {
-    console.log(`Server running on port ${config.PORT}`)
-})
-=======
 let userData = [
     {
         id: 0,
@@ -173,4 +159,3 @@ const PORT = 3001
 app.listen(PORT, () => {
     console.log(`DIMU demosaitti on livenä portissa ${PORT}`)
 })
->>>>>>> parent of b316c5d... MongoDB enabled
