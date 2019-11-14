@@ -1,12 +1,14 @@
 const mongoose = require('mongoose')
 
 const submissionSchema = new mongoose.Schema({
-    name: String,
-    description: String,
-    text: String,
-    course: String,
-    date: String
-    
+    headline: String,
+    shortDesc: String,
+    makers: Array,
+    year: Number,
+    published: Date,
+    public: Boolean,
+    imgUrls: Array,
+    MainContent: String,
 })
 
 submissionSchema.set('toJSON', {
