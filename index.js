@@ -6,6 +6,7 @@ const app = express()
 const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(cors())
+app.use(express.static('build'))
 
 const url = process.env.MONGODB_URI
 console.log('connecting to', url)
