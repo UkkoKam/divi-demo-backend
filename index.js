@@ -7,63 +7,6 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(cors())
 
-//Get
-
-// Kaikkien käyttäjien data
-// app.get('/userdata', (req,res) => {
-//     User.find({}).then(users => {
-//         res.json(users.map(user => user.toJSON()))
-//     })
-// })
-// // Yksittäisen käyttäjän data IDn perusteella
-// app.get('/userdata/:id', (req,res) => {
-//     User.findById(req.params.id).then(user => {
-//         if (user) {
-//             return res.json(user.toJSON())
-//         } else {
-//             res.status(404).end()
-//         }
-//     })
-//     .catch(error => next(error))
-// }) 
-// //Yksittäisen käyttäjän lisääminen
-// app.post('/userdata', (req,res) => {
-//     const body = req.body
-
-//     if(body.name === undefined) {
-//         return res.status(400).json({error: 'content missing'})
-//     }
-
-//     const user = new User({
-//         name: body.name,
-//         admin: false,
-//         submissions: []
-//     })
-
-//     user.save().then(savedUser => {
-//         res.json(savedUser.toJSON())
-//     })
-// })
-// // Lisää submissionin
-// app.post('/userdata/:id/submissions', (req,res) => {
-
-//     const id = req.body.id
-//     User.findOne({'_id':id}, ())
-// }) 
-// // Poistaa yksittäisen käyttäjän IDn mukaan
-// app.delete('/userdata/:id', (req,res, next) => {
-//     User.findByIdAndRemove(req.params.id)
-//         .then(result => {
-//             res.status(204).end()
-//         })
-//         .catch(error => next(error))
-// })
-// // Defaultti 
-// app.get('/', (req, res) => {
-//     res.send('<h1>Hello world!<h1>')
-// })
-// // Error handler tilanteeseen, jossa ID ei ole oikeassa formaatissa.
-
 const url = process.env.MONGODB_URI
 console.log('connecting to', url)
 
@@ -111,7 +54,7 @@ app.get('/submissions' ,(req,res) => {
 app.get('/submissions/:id', (req,res,next) => {
     Submission.findById(req.params.id)
         .then(submission => {
-            if (note) {
+            if (submission) {
                 res.json(submission.toJSON())
             } else {
                 res.status(404).end()

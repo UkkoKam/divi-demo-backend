@@ -4,6 +4,7 @@
   "description": "Backend divi promosaitille",
   "main": "index.js",
   "scripts": {
+    "build:ui": "rm -rf build && cd ../divi-demo && npm run build --prod && cp -r build ../divi-demo-backend",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "watch": "nodemon index.js"
