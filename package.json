@@ -4,7 +4,7 @@
   "description": "Backend divi promosaitille",
   "main": "index.js",
   "scripts": {
-    "build:ui": "rm -rf build && cd ../divi-demo && npm run build --prod && cp -r build ../divi-demo-backend",
+    "build:ui": "rm -rf build && cd ../divi-demo && npm run build --prod && cp -r build ../digimuotoilu.github.io",
     "deploy": "git push heroku master",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
     "logs:prod": "heroku logs --tail",
