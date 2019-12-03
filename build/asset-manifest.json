@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ae9615d8.chunk.css",
+    "main.js": "/static/js/main.d979f0bc.chunk.js",
+    "main.js.map": "/static/js/main.d979f0bc.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.dbd4628e.js",
+    "runtime~main.js.map": "/static/js/runtime~main.dbd4628e.js.map",
+    "static/js/2.26ef3eda.chunk.js": "/static/js/2.26ef3eda.chunk.js",
+    "static/js/2.26ef3eda.chunk.js.map": "/static/js/2.26ef3eda.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.a4456de87f9ecfd326de0902caba45bc.js": "/precache-manifest.a4456de87f9ecfd326de0902caba45bc.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.ae9615d8.chunk.css.map": "/static/css/main.ae9615d8.chunk.css.map",
+    "static/media/external-link.00f33fc3.svg": "/static/media/external-link.00f33fc3.svg",
+    "static/media/index.css": "/static/media/hero-cover-image-placeholder.cf1d07b9.png",
+    "static/media/hero_placeholder_image.png": "/static/media/hero_placeholder_image.7e2b9654.png",
+    "static/media/placeholder-1.png": "/static/media/placeholder-1.0da70c61.png",
+    "static/media/placeholder_logo.88f7f1ff.svg": "/static/media/placeholder_logo.88f7f1ff.svg"
+  }
+}
