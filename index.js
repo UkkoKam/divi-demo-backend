@@ -127,7 +127,7 @@ const errorHandler = (error, req, res, next) => {
 // Otetaan middleware käyttöön
 app.use(errorHandler)
 // Käynnistetään serferi envioronmental muuttujien perusteella 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {
     console.log(`DIMU demosaitti on livenä portissa ${PORT}`)
 })
