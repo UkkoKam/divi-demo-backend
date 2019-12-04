@@ -1,5 +1,7 @@
 # digimuotoilu.io
 
+Muista npm install ennen kuin teet mitään
+
 ## Kehitys
 
 Kehittämisen jouhevoittamiseksi kannatttaa käyttää tämän repon package.json tiedostosta löytyviä scriptejä. Scriptit toimivat, kun repo divi-demo sekä divi-demo-backend ovat molemmat samassa kansiossa
