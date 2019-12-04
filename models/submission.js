@@ -9,6 +9,10 @@ const submissionSchema = new mongoose.Schema({
     public: Boolean,
     imgUrls: Array,
     MainContent: String,
+    user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    }
 })
 
 submissionSchema.set('toJSON', {
