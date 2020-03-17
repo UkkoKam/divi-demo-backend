@@ -1,3 +1,7 @@
+Linkki front-endiin: 
+
+https://github.com/veetiveeti/digital-design-demo
+
 # digimuotoilu.io
 
 Muista npm install ennen kuin teet mitään
